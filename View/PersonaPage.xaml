@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="practicahoy.View.PersonaPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text=" id" ></Label>
+                <Entry Text="{Binding id}" ></Entry>
+                <Label Text="nombre"></Label>
+                <Entry Text="{Binding nombre}"></Entry>
+                <Label Text="Apellido"></Label>
+                <Entry Text="{Binding Apellido}"></Entry>
+                <Label Text="Edad}"></Label>
+                <Entry Text="{Binding Edad}"></Entry>
+                <Label Text="{Binding NombreCompleto}"></Label>
+
+                <Button Text="guardar" Command="{Binding guardarCommad}" ></Button>
+                <Button Text="Editar" Command="{Binding ModificarCommad}" ></Button>
+                <Button Text="Eliminar" Command="{Binding EliminarCommad}" ></Button>
+                <Button Text="Limpiar" Command="{Binding LimpiarCommad}" ></Button>
+
+                <ListView x:Name="LvPersona" ItemsSource="{Binding personas}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Edad}" Detail="{Binding NombreCompleto}" ></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+           
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
